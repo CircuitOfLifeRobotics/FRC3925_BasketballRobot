@@ -15,6 +15,7 @@ import org.usfirst.frc9001.BasketBallRobot.RobotMap;
 import org.usfirst.frc9001.BasketBallRobot.commands.ManualLauncher;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -28,7 +29,11 @@ public class Launcher extends Subsystem {
     CANTalon motorLoader = RobotMap.launcherMotorLoader;
 
     public void init() {
-    	motorLauncher.setFeedbackDevice(FeedbackDevice.EncRising);
+    	try {
+    		motorLauncher.setFeedbackDevice(FeedbackDevice.EncRising);
+		} catch (Exception e) {
+			DriverStation.reportError("No encoder found!", true);
+		}
     }
     
     public void setLauncherSpeed(double speed) {

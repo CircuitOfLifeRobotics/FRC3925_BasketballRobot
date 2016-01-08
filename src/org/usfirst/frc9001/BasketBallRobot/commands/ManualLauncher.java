@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class ManualLauncher extends Command {
-	Joystick xbox = Robot.oi.xbox;
-	Launcher launcher = Robot.launcher;
+	Joystick xbox;
+	Launcher launcher;
 	Button launcherBtn;
 	Button feedBtn;
 	
@@ -26,8 +26,10 @@ public class ManualLauncher extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	xbox = Robot.oi.xbox;
     	launcherBtn = new Button(xbox, XboxHelper.B);
     	feedBtn = new Button(xbox, XboxHelper.A);
+    	launcher = Robot.launcher;
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -44,7 +46,7 @@ public class ManualLauncher extends Command {
     		launcher.setLoaderSpeed(0);
     	}
     	
-    	logData();
+//    	logData();
     }
     
     public void logData() {
