@@ -34,6 +34,7 @@ public class ManualLauncher extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	/*
     	if (!launcherBtn.get()) {
 			launcher.setLauncherSpeed(1);
 		} else {
@@ -45,6 +46,7 @@ public class ManualLauncher extends Command {
     	} else {
     		launcher.setLoaderSpeed(0);
     	}
+    	//*/
     	
 //    	logData();
     }

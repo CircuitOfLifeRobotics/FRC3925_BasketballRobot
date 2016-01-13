@@ -115,6 +115,11 @@ public class Robot extends IterativeRobot {
         launcher.logData();
         driveTrain.logData();
         logCommandStatuses();
+        
+        /* Manual override for testing purposes
+        launcher.setLauncherSpeed(1);
+        launcher.setLoaderSpeed(1);
+        //*/
     }
 
     /**
