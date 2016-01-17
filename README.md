@@ -6,10 +6,6 @@
 
 <b>Current Controls:</b>
 
-'A' Button = Toggle Feeder Motor On/Off
+'A' Button = Launch Motor On
 
-'X' Button = Toggle Feeder Motor On/Off
-
-'B' Button = Toggle Launcher Motor On/Off
-
-'Y' Button = Toggle Launcher Motor On/Off
+'B' Button = Loader Motor On
