@@ -14,6 +14,7 @@ package org.usfirst.frc9001.BasketBallRobot;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -64,7 +65,15 @@ public class RobotMap {
     	launcherMotorLoader = new CANTalon(8);
     	//*/
         
+    	LiveWindow.addActuator("Launcher", "LauncherMotor", launcherMotorLauncher);
+    	LiveWindow.addActuator("Launcher", "LoaderMotor", launcherMotorLoader);
         
+    	LiveWindow.addActuator("DriveTrain", "MotorLeftA", driveTrainMotorLeftA);
+    	LiveWindow.addActuator("DriveTrain", "MotorLeftB", driveTrainMotorLeftB);
+    	LiveWindow.addActuator("DriveTrain", "MotorRightA", driveTrainMotorRightA);
+    	LiveWindow.addActuator("DriveTrain", "MotorRightB", driveTrainMotorRightB);
+    	
+    	
         driveTrainRobotDrive = new RobotDrive((SpeedController) driveTrainMotorLeftA, (SpeedController) driveTrainMotorRightA);
 //      Warning! This cast may not work!
         

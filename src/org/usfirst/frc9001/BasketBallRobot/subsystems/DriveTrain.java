@@ -43,10 +43,10 @@ public class DriveTrain extends Subsystem {
 //		motorLeftB.SetModeSelect(CanTalonSRX.kMode_SlaveFollower);
 //		motorRightB.SetModeSelect(CanTalonSRX.kMode_SlaveFollower);
 		
-		motorLeftB.changeControlMode(CANTalon.ControlMode.Follower);
+		motorLeftB.changeControlMode(CANTalon.TalonControlMode.Follower);
 		motorLeftB.set(motorLeftA.getDeviceID());
-
-		motorRightB.changeControlMode(CANTalon.ControlMode.Follower);
+ 
+		motorRightB.changeControlMode(CANTalon.TalonControlMode.Follower);
 		motorRightB.set(motorRightA.getDeviceID());
 		
 	}
