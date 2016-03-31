@@ -26,7 +26,7 @@ public class ManualLauncher extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	xbox = Robot.oi.xbox;
+    	xbox = Robot.oi.flightStick;
     	launcherBtn = new Button(xbox, XboxHelper.B);
     	feedBtn = new Button(xbox, XboxHelper.A);
     	launcher = Robot.launcher;

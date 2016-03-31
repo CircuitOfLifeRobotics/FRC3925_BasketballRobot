@@ -30,7 +30,7 @@ public class XboxHelper {
 	
 	
 	public static void init() {
-		xbox = Robot.oi.xbox;
+		xbox = Robot.oi.flightStick;
 	}
 	
 	public static double getAxis(int axis) {
