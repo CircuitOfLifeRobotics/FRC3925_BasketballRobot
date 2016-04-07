@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Class implements the interface to the Pixy Camera via I2C.
@@ -249,12 +250,12 @@ public class PixyCmu5 implements PIDSource
 
     	// Read data from the i2c bus 
     	m_i2cbus.readOnly(readBuffer, DATA_SIZE);
-
+    	
     	if(Arrays.equals(m_zeroBuffer, readBuffer))
     	{
     		if(flg_debug)
     		{
-    			System.out.println("Pixy - Read Failed! All elements returned were 0!");
+    			SmartDashboard.putString("Pixy", "Read Failed! All elements returned were 0!");
     		}
 
     		// Add synchronization block to assign frame output to class
@@ -281,7 +282,7 @@ public class PixyCmu5 implements PIDSource
     			readBuffer_char += Integer.toString(readBuffer[idx] & 0xFF) + " ";
     		}
     		// Print the raw buffer to the console
-    		System.out.println(readBuffer_char);
+    		SmartDashboard.putString("Pixy Data", readBuffer_char);
     	}
     	
     	/* 

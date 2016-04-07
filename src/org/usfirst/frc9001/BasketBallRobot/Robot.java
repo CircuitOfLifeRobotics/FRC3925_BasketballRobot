@@ -124,7 +124,7 @@ public class Robot extends IterativeRobot {
         
 //        launcher.logData();
         driveTrain.logData();
-		SmartDashboard.putBoolean("NullPixy", pixy == null);
+		SmartDashboard.putBoolean("NullPixy", pixy != null);
 
         /* Manual override for testing purposes
         launcher.setLauncherSpeed(1);

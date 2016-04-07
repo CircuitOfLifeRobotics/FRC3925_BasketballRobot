@@ -1,5 +1,8 @@
 package org.usfirst.frc9001.BasketBallRobot.commands;
 
+import java.awt.Frame;
+import java.util.List;
+
 import org.usfirst.frc9001.BasketBallRobot.Robot;
 import org.usfirst.frc9001.BasketBallRobot.util.PixyCmu5;
 import org.usfirst.frc9001.BasketBallRobot.util.PixyCmu5.PixyFrame;
@@ -32,11 +35,11 @@ public class VisionTest extends Command {
 
 	double vertSetpoint, degFromCenter;
 
-	private int centerX, centerY, area, width, height;
+	private int centerX, centerY, area, width, height, arrSize;
 	private double camDist, pixCenter;
-	private PixyFrame frame;
-	private boolean hasTurned;
-
+	private List<PixyFrame> frames;
+	private boolean hasTurned, isReading;
+	
 	@Override
 	protected void initialize() {
 	}
@@ -49,8 +52,13 @@ public class VisionTest extends Command {
 		}
 		
 		try {
-			frame = pixy.getFrames().get(0);
-			calcData();
+			arrSize = pixy.getFrames().size();
+			isReading = pixy.getIsReading();
+			frames = pixy.getFrames();
+			if (arrSize>0) {
+				frames.get(1);
+			}
+//			calcData();
 		} catch (Exception e) {
 			DriverStation.reportError("Error retrieving latest frame\n", false);
 		}
@@ -59,12 +67,12 @@ public class VisionTest extends Command {
 	}
 
 	private void calcData() {
-		if (!pixy.getFrames().isEmpty()) {
-			centerX = frame.xCenter;
-			centerY = frame.yCenter;
-			area = frame.area;
-			width = frame.width;
-			height = frame.height;
+		if (arrSize>0) {
+			centerX = frames.get(0).xCenter;
+			centerY = frames.get(0).yCenter;
+			area = frames.get(0).area;
+			width = frames.get(0).width;
+			height = frames.get(0).height;
 
 			camDist = CAMERA_TARGET_WIDTH/2 / Math.tan(Math.toRadians(width/2 * PixyCmu5.PIXY_X_DEG_PER_PIXEL));
 			pixCenter = -Math.atan(CAMERA_MID_OFFSET/camDist)/PixyCmu5.PIXY_X_DEG_PER_PIXEL + PixyCmu5.PIXY_X_FOV/2;
@@ -90,9 +98,12 @@ public class VisionTest extends Command {
 		SmartDashboard.putNumber("CamDist", camDist);
 		SmartDashboard.putNumber("PixCenter", pixCenter);
 
+		SmartDashboard.putNumber("size", arrSize);
+		
 		SmartDashboard.putBoolean("Pixy_ObjectDetected", pixy.isObjectDetected());
 		SmartDashboard.putBoolean("Pixy_ObjectDetected", pixy.isDetectedAndCentered());
 		SmartDashboard.putNumber("Pixy_DegFromCenter", degFromCenter);
+		SmartDashboard.putBoolean("Pixy_IsReading", isReading);
 		}
 	}
 
