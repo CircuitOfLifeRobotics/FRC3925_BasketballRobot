@@ -1,15 +1,16 @@
 package org.usfirst.frc9001.BasketBallRobot.commands;
 
 import org.usfirst.frc9001.BasketBallRobot.Robot;
-import org.usfirst.frc9001.BasketBallRobot.util.DriveTrainSignal;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ManualDrive extends Command {
+public class SetLauncherShooterSpeed extends Command {
+	private double speed;
 	
-	public ManualDrive() {
-		super("ManualDrive");
-		requires(Robot.driveTrain);
+	public SetLauncherShooterSpeed(double speed) {
+		super("SetLauncherShooterSpeed-" + speed);
+		requires(Robot.launcherShooter);
+		this.speed = speed;
 	}
 	
 	@Override
@@ -18,9 +19,7 @@ public class ManualDrive extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.driveTrain.doArcadeDrive(
-				Robot.oi.getManualDrive_ForwardValue(),
-				Robot.oi.getManualDrive_RotateValue());
+		Robot.launcherShooter.setMotorSpeed(speed);
 	}
 
 	@Override
@@ -30,7 +29,7 @@ public class ManualDrive extends Command {
 
 	@Override
 	protected void end() {
-		Robot.driveTrain.setOpenLoop(DriveTrainSignal.NEUTRAL);
+		Robot.launcherShooter.setMotorSpeed(0);
 	}
 
 	@Override

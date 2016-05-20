@@ -1,9 +1,14 @@
 package org.usfirst.frc9001.BasketBallRobot.util;
 
-import org.usfirst.frc9001.BasketBallRobot.RobotMap;
+import org.usfirst.frc9001.BasketBallRobot.HardwareAdaptor;
 
 import edu.wpi.first.wpilibj.SpeedController;
 
+/**
+ * Implementation for multiple speed controllers functioning in tandem
+ * 
+ * @author Team254
+ */
 public class CheesySpeedController implements SpeedController {
     protected SpeedController[] m_controllers;
     protected int[] m_pdp_slots;
@@ -40,7 +45,7 @@ public class CheesySpeedController implements SpeedController {
     public double getCurrent() {
         double current = 0.0;
         for (int slot : m_pdp_slots) {
-            current += RobotMap.pdp.getCurrent(slot);
+            current += HardwareAdaptor.pdp.getCurrent(slot);
         }
         return current;
     }
@@ -81,4 +86,11 @@ public class CheesySpeedController implements SpeedController {
             controller.disable();
         }
     }
+
+	@Override
+	public void stopMotor() {
+        for (SpeedController controller : m_controllers) {
+            controller.stopMotor();
+        }
+	}
 }
