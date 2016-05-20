@@ -1,6 +1,6 @@
-package org.usfirst.frc9001.BasketBallRobot.util;
+package com.team3925.squishy.util;
 
-import org.usfirst.frc9001.BasketBallRobot.HardwareAdaptor;
+import com.team3925.squishy.HardwareAdaptor;
 
 import edu.wpi.first.wpilibj.SpeedController;
 

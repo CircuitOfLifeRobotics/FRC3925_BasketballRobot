@@ -1,8 +1,8 @@
-package org.usfirst.frc9001.BasketBallRobot.subsystems;
+package com.team3925.squishy.subsystems;
 
-import org.usfirst.frc9001.BasketBallRobot.commands.ManualDrive;
-import org.usfirst.frc9001.BasketBallRobot.util.CheesySpeedController;
-import org.usfirst.frc9001.BasketBallRobot.util.DriveTrainSignal;
+import com.team3925.squishy.commands.ManualDrive;
+import com.team3925.squishy.util.CheesySpeedController;
+import com.team3925.squishy.util.DriveTrainSignal;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;

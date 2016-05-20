@@ -1,8 +1,8 @@
-package org.usfirst.frc9001.BasketBallRobot;
+package com.team3925.squishy;
 
-import org.usfirst.frc9001.BasketBallRobot.commands.CommandLoad;
-import org.usfirst.frc9001.BasketBallRobot.commands.CommandShoot;
-import org.usfirst.frc9001.BasketBallRobot.util.hidhelpers.XboxHelper;
+import com.team3925.squishy.commands.CommandLoad;
+import com.team3925.squishy.commands.CommandShoot;
+import com.team3925.squishy.util.hidhelpers.XboxHelper;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

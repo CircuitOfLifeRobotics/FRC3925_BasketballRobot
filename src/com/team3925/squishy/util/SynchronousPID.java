@@ -1,4 +1,4 @@
-package org.usfirst.frc9001.BasketBallRobot.util;
+package com.team3925.squishy.util;
 
 import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
 import edu.wpi.first.wpilibj.tables.ITable;

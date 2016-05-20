@@ -1,9 +1,9 @@
-package org.usfirst.frc9001.BasketBallRobot;
+package com.team3925.squishy;
 
-import org.usfirst.frc9001.BasketBallRobot.subsystems.DriveTrain;
-import org.usfirst.frc9001.BasketBallRobot.subsystems.LauncherElevator;
-import org.usfirst.frc9001.BasketBallRobot.subsystems.LauncherShooter;
-import org.usfirst.frc9001.BasketBallRobot.util.hidhelpers.XboxHelper;
+import com.team3925.squishy.subsystems.DriveTrain;
+import com.team3925.squishy.subsystems.LauncherElevator;
+import com.team3925.squishy.subsystems.LauncherShooter;
+import com.team3925.squishy.util.hidhelpers.XboxHelper;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;

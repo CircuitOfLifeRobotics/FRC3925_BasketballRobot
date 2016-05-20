@@ -1,7 +1,8 @@
-package org.usfirst.frc9001.BasketBallRobot;
+package com.team3925.squishy;
 
-import org.usfirst.frc9001.BasketBallRobot.util.CheesySpeedController;
-import static org.usfirst.frc9001.BasketBallRobot.Constants.*;
+import static com.team3925.squishy.Constants.*;
+
+import com.team3925.squishy.util.CheesySpeedController;
 
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.SpeedController;

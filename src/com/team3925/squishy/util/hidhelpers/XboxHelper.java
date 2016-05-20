@@ -1,6 +1,6 @@
-package org.usfirst.frc9001.BasketBallRobot.util.hidhelpers;
+package com.team3925.squishy.util.hidhelpers;
 
-import org.usfirst.frc9001.BasketBallRobot.Constants;
+import com.team3925.squishy.Constants;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.RumbleType;

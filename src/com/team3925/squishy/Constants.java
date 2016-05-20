@@ -1,4 +1,4 @@
-package org.usfirst.frc9001.BasketBallRobot;
+package com.team3925.squishy;
 
 public class Constants {
 	private Constants() {}
